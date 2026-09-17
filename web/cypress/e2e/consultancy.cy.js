@@ -104,14 +104,14 @@ describe('Formulário de Consultoria',() => {
         ]
 
         techs.forEach((tech) => { //itera sobre cada tecnologia na lista "techs"
-        cy.get('input[placeholder="Digite uma tecnologia e pressione Enter"]')
-            .type(tech) //digita a tecnologia "Cypress" no campo de tags
-            .type('{enter}') //simula a tecla "Enter" para adicionar a tag "Cypress"
+            cy.get('input[placeholder="Digite uma tecnologia e pressione Enter"]')
+                .type(tech) //digita a tecnologia "Cypress" no campo de tags
+                .type('{enter}') //simula a tecla "Enter" para adicionar a tag "Cypress"
 
-        cy.contains('label', 'Tecnologias') //encontra o rótulo "Tecnologias"
-            .parent() //navega para o elemento pai do rótulo "Tecnologias"
-            .contains('span', tech) //encontra a tag "Cypress" dentro do elemento pai
-            .should('be.visible') //verifica se a tag "Cypress" está visível
+            cy.contains('label', 'Tecnologias') //encontra o rótulo "Tecnologias"
+                .parent() //navega para o elemento pai do rótulo "Tecnologias"
+                .contains('span', tech) //encontra a tag "Cypress" dentro do elemento pai
+                .should('be.visible') //verifica se a tag "Cypress" está visível
         })
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
